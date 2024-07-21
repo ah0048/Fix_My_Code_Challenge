@@ -6,9 +6,9 @@ class square():
     height = 0
 
     
-    def __init__(self, *args, **kwargs):
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
         if hasattr(self, 'width') and hasattr(self, 'height') and self.height != self.width:
             raise ValueError('for a square, height must be the same as width')
 
@@ -24,7 +24,7 @@ class square():
 
 if __name__ == "__main__":
 
-    s = square(width=12, height=9)
+    s = square(width=12, height=12)
     print(s)
     print(s.area_of_my_square())
     print(s.PermiterOfMySquare())
